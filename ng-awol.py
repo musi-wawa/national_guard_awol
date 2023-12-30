@@ -7,6 +7,7 @@ def main():
         printMainMenu()
         choice = str(input("    "))
         choice = choice.lower()
+        clear()
         if choice == "1" or choice == "new game" or choice == "new":
             print("Under contruction!")
         elif choice == "2" or choice == "load game" or choice == "load":
@@ -19,9 +20,8 @@ def main():
     sys.exit()
 
 def printMainMenu():
-    print("""
-National Guard: AWOL
-    Created by Avery (Fluidhelix)
+    print("""National Guard: AWOL
+    Created by Avery and Niah
           
 ---------------------------------
 
