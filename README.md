@@ -16,6 +16,6 @@ note: world is very tiny and probably going to kill you
 
 ### [Trello](https://trello.com/b/cy7YW9hn/awol-development)
 
-## itch.io (coming soon!)
+### itch.io (coming soon!)
 
 ## If the game does not open, download Python [here](https://www.python.org/downloads/)
