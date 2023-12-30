@@ -3,8 +3,8 @@ from defines import *
 import random
 
 def combatTest():
-    print("""
-COMBAT TEST
+    clear()
+    print("""COMBAT TEST
 ---------------------------------""")
     print("PLAYER SQUAD SIZE:")
     squadHolder = []
