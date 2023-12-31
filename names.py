@@ -6,12 +6,12 @@ def main():
     firstNames = open("data/first-names.txt")
     lastNames = open("data/last-names.txt")
     
-    firstNameLine = random.randint(1,4945) #total number of lines
+    firstNameLine = random.randint(1,1003) #total number of lines
     fullName+=firstNames.readlines()[firstNameLine]
     fullName = fullName.strip()
     fullName += " "
 
-    lastNameLine = random.randint(1,21985) #total number of lines
+    lastNameLine = random.randint(1,322) #total number of lines
     fullName += lastNames.readlines()[lastNameLine]
 
     firstNames.close()
