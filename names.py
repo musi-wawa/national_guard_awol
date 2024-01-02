@@ -24,7 +24,7 @@ def getRandomName():
     firstNames = open("data/first-names.txt")
     lastNames = open("data/last-names.txt")
     
-    firstNameLine = random.randint(1,4945) #total number of lines
+    firstNameLine = random.randint(1,1003) #total number of lines
     fullName+=firstNames.readlines()[firstNameLine]
     fullName = fullName.strip()
     fullName += " "
