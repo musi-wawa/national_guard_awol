@@ -19,3 +19,5 @@ note: world is very tiny and probably going to kill you
 ### itch.io (coming soon!)
 
 ## If the game does not open, download Python [here](https://www.python.org/downloads/)
+
+National Guard: AWOL © 2024 is licensed under CC BY-NC-SA 4.0 
