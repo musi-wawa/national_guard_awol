@@ -1,6 +1,7 @@
 import os
 import random
-clear = lambda: os.system('cls')
+if os.name == 'nt':
+    clear = lambda: os.system('cls')
 
 class Squad:
     def __init__(self, members=None, name="Unnamed Squad"):
@@ -27,8 +28,8 @@ class Fighter:
     def __str__(self):
         return f"{self.name}, {self.flavor}"
     
-    def attemptAction(self):                 #  dont use this until we have individual squad management. as long as everyone's being kept 
-        if self.actions == 0:                #  track of as a single moving blob, just keep track of turns per side.
+    def attemptAction(self):                 #  dont use this until we have individual squad management. as long as everyone's being kept track of as a single moving blob, just keep track of turns per side.
+        if self.actions == 0:                
             return 1 #"out of actions!"
         elif self.health == 1:
             return 2 #"unconscious!"
