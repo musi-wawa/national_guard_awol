@@ -45,15 +45,18 @@ def getTestSquadSize():
     return squadSize
 
 def battle(playerSide,computerSide,distance):
-    playerTurn = True
+
     while True:
+        playerTurn = True
         actionsLeft = 2
-        clear()              #new player turn
-        narrateScene(playerSide,computerSide,distance)
-        showOptions(actionsLeft)
+                      #new player turn
         while playerTurn == True:
+            clear()
+            narrateScene(playerSide,computerSide,distance)
+            showOptions(actionsLeft)
             if actionsLeft == 0:
                 playerTurn = False
+                continue
             choice = input("\n   What do you do? ")
             match choice.lower():
                 case "1" | "advance":
@@ -61,15 +64,27 @@ def battle(playerSide,computerSide,distance):
                     actionsLeft -=1
                 case "2" | "retreat":
                     distance += 1
-            
-"""             case 3 | "attack":
-                case 4 | "gear":
-                case 5 | "suppress":
-                case 6 | "talk":
-                case 7 | "examine":
-                case 8 | "end" | "end turn": 
-                    
-def getFighters(squad):"""
+                    actionsLeft -=1
+                case "3" | "attack":
+                    actionsLeft -=1
+                    attack(distance,playerSide,computerSide)
+                case "4" | "suppress":
+                    actionsLeft -=1
+                    attack(distance,playerSide,computerSide,True)
+"""                case 5 | "gear":
+                case "6" | "inventory":
+                case "7" | "examine":
+                case "8" | "end" | "end turn": """
+
+def attack(distance,attackingSide,defendingSide,suppression = False):
+    if suppression == False:
+        for fighter in attackingSide.members:
+            if fighter.inventory.weapon.weapon["range"] <= distance and hasAmmo(fighter,attackingSide) == True:
+                print("bang")
+
+def hasAmmo(fighter,squad):
+    ammoNeeded = fighter.inventory.weapon.ammo
+    return True
 
 def showOptions(actionsLeft):
     if actionsLeft == 1:
@@ -79,9 +94,9 @@ def showOptions(actionsLeft):
     print("1. Advance")
     print("2. Retreat")
     print("3. Attack")
-    print("4. Gear")
-    print("5. Suppress")
-    print("6. Talk")
+    print("4. Suppress")
+    print("5. Gear")
+    print("6. Inventory")
     print("7. Examine")
     print("8. End turn")
     print("Remember that you can do 'help' to learn about any command.")

@@ -2,6 +2,8 @@ import os
 import random
 if os.name == 'nt':
     clear = lambda: os.system('cls')
+else:
+    clear = lambda: os.system('clear')
 
 class Squad:
     def __init__(self, members=None, name="Unnamed Squad"):
