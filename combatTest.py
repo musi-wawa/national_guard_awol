@@ -23,10 +23,10 @@ def combatTest():
 def generateTestSquad(newSquad,newSquadSize):
     for _ in range(newSquadSize):
         newFighter = Fighter(getRandomName(),[1,0,0])
-        newFighter.inventory.weapon = Item(1)
-        newFighter.inventory.equipment = Item(3)
-        newFighter.inventory.gear = Item(2,5)
-        newFighter.inventory.uniform = Item(10)
+        newFighter.weapon = Item(1)
+        newFighter.equipment = Item(3)
+        newFighter.gear = Item(2,5)
+        newFighter.uniform = Item(10)
         newSquad.append(newFighter)
     return(newSquad)
 
@@ -67,16 +67,16 @@ def battle(playerSide,computerSide,distance):
                     actionsLeft -=1
                 case "3" | "attack":
                     actionsLeft -=1
-                    attack(distance,playerSide,computerSide)
+                    #attack(distance,playerSide,computerSide)
                 case "4" | "suppress":
                     actionsLeft -=1
-                    attack(distance,playerSide,computerSide,True)
+                    #attack(distance,playerSide,computerSide,True)
 """                case 5 | "gear":
                 case "6" | "inventory":
                 case "7" | "examine":
                 case "8" | "end" | "end turn": """
 
-def attack(distance,attackingSide,defendingSide,suppression = False):
+"""def attack(distance,attackingSide,defendingSide,suppression = False):
     if suppression == False:
         for fighter in attackingSide.members:
             if fighter.inventory.weapon.weapon["range"] <= distance and hasAmmo(fighter,attackingSide) == True:
@@ -84,7 +84,7 @@ def attack(distance,attackingSide,defendingSide,suppression = False):
 
 def hasAmmo(fighter,squad):
     ammoNeeded = fighter.inventory.weapon.ammo
-    return True
+    return True"""
 
 def showOptions(actionsLeft):
     if actionsLeft == 1:

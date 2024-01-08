@@ -19,7 +19,12 @@ class Fighter:
     def __init__(self, name = "John Doe", skills = [0,0,0]):
         self.name = name
         self.flavor = "A generic human being."
-        self.inventory = Inventory()
+        self.weapon = Item(0)
+        self.equipment = Item(-1)
+        self.gear = Item(-1)
+        self.headgear = Item(-1)
+        self.storage = Item(-1)
+        self.uniform = Item(-2)
         self.skills = skills
         self.actions = 0
         self.morale = 3      #number is a placeholder for combat test
@@ -40,7 +45,7 @@ class Fighter:
         else:
             self.actions -= 1
 
-class Inventory:
+"""class Inventory:
     def __init__(self, weapon = None, equipment = None, gear = None, storage = None, uniform = None):
         if weapon == None:
             self.weapon = Item(0)       #if new inventory slots are empty, create item 0 AKA "empty" in that slot
@@ -54,11 +59,10 @@ class Inventory:
         if storage == None:
             self.storage = [Item(-1)]
         if uniform == None:
-            self.uniform = Item(-2)
+            self.uniform = Item(-2)"""
 
-    def __str__(self):
-        return f"{self.weapon}, {self.equipment}, {self.gear}, {self.storage}"
-    
+    """def __str__(self):
+        return f"{self.weapon}, {self.equipment}, {self.gear}, {self.storage}"""
 class Item:
     def __init__(self, id = 0, stack = 1):
         self.id = id
