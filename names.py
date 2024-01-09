@@ -11,7 +11,7 @@ def main():
     fullName = fullName.strip()
     fullName += " "
 
-    lastNameLine = random.randint(1,322) #total number of lines
+    lastNameLine = random.randint(1,199) #total number of lines
     fullName += lastNames.readlines()[lastNameLine]
 
     firstNames.close()
@@ -29,7 +29,7 @@ def getRandomName():
     fullName = fullName.strip()
     fullName += " "
 
-    lastNameLine = random.randint(1,323) #total number of lines
+    lastNameLine = random.randint(1,199) #total number of lines
     fullName += lastNames.readlines()[lastNameLine]
 
     firstNames.close()
