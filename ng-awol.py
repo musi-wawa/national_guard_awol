@@ -1,4 +1,4 @@
-from combatTest import *
+from combat import *
 import sys
 
 def main():
@@ -31,6 +31,23 @@ def printMainMenu():
     4: Exit
 """)
 
+def combatTest():
+    clear()
+    print("""COMBAT TEST
+---------------------------------""")
+    print("PLAYER SQUAD SIZE:")
+    squadHolder = []
+    playerSquadSize = getTestSquadSize()
+    squadHolder = generateTestSquad(squadHolder,playerSquadSize)
+    playerSquad = Squad(squadHolder,"Player Squad")
+    print("COMPUTER SQUAD SIZE:")
+    squadHolder = []
+    computerSquadSize = getTestSquadSize()
+    squadHolder = generateTestSquad(squadHolder,computerSquadSize)
+    computerSquad = Squad(squadHolder,"Computer Squad")
+    distance = 10 #change as needed
+    while True:
+        battle(playerSquad,computerSquad,distance)      #start the fight!
 
 if __name__ == "__main__":
     main()
