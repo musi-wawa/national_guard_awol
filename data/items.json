@@ -1,70 +1,90 @@
 {
     "-2": {
       "name": "nothing",
-      "droppable": false,
-      "maxStack": 0,
+      "weight": 0,
       "flavor": "This person is not wearing any clothing whatsoever. Not that anyone cares about that sort of thing anymore.",
-      "slots": ["uniform"]
+      "slots": ["uniform"],
+      "flags": ["UNDROPPABLE"]
     },
     "-1": {
       "name": "empty",
-      "droppable": false,
-      "maxStack": 0,
+      "weight": 0,
       "flavor": "This slot is empty. There's nothing here.",
-      "slots": ["gear", "equipment"]
+      "slots": ["gear", "equipment"],
+      "flags": ["UNDROPPABLE"]
     },
     "0": {
       "name": "unarmed",
-      "droppable": false,
       "flavor": "Hand to hand, fisticuffs, close quarters combat, martial arts, whatever you wanna call it. This person is entirely unarmed and is relying purely on their body for offense.",
-      "maxStack": 0,
-      "stats": {"range": 0, "damage": 1, "cost": 0, "suppress": 0, "ammo": 0, "bonus": -1},
-      "slots": ["weapon"]
+      "weight": 0,
+      "stats": {"range": 0, "damage": 3,  "suppress": 0, "bonus": -1},
+      "slots": ["weapon"],
+      "flags": ["UNDROPPABLE","MELEE"]
     },
     "1": {
-      "name": "modern assault rifle",
-      "droppable": true,
-      "flavor": "A standard issue NG14 Assault Weapon, capable of holding 33 rounds of 7.79 HP in each external magazine. The magazine is loaded directly into the chamber so there is no 'plus one'. It is in a bullpup configuration and the magazines are quite bulky.",
-      "maxStack": 0,
-      "stats": {"range": 4, "damage": 3, "cost": 2, "suppress": 4, "ammo": 4, "bonus": 3},
+      "name": "national guard assault rifle",
+      "flavor": "A standard issue NG14 Assault Weapon, capable of holding 33 rounds of 7.79 HP in each external magazine. The chamber is built into each magazine so there is no 'plus one'. It is in a bullpup configuration and the magazines are quite bulky. Its polymer body is black with red highlights, supposedly representing the sacrifices Guardsmen are willing to make in the name of Communism. A constant reminder of how disposable you are.",
+      "weight": 25,
+      "stats": {"magazine":12, "range": 7, "damage": 33, "burst":3, "suppress": 4, "ammoType": 4, "bonus": 3},
+      "flags": [],
       "slots": ["weapon"]
     },
     "2": {
-      "name": "modern marksman rifle",
-      "droppable": true,
-      "flavor": "The NG20 Reconaissance Weapon, A semi-automatic marksman rifle firing from a small side-fed magazine, integrated irons, and a 10x scope. Using 7.79 High Penetration in the reverse configuration, this weapon smashes through armor like it’s nothing but is ineffective against unarmored opponents. Prototypes for 12.79 HP variants exist, but never saw use due to the scarcity of armored targets to shoot at that need much firepower.",
-      "maxStack": 0,
-      "stats": {"range": 6, "damage": 2, "cost": 1, "suppress": 0, "ammo": 4, "bonus": 2},
+      "name": "national guard light machine gun",
+      "flavor": "A bullpup NG22 Suppression Weapon, holding an impressive 66 rounds. It is extremely bulky and has awful ergonomics, but more than makes up for it with its rate of fire and sheer power. It doesn’t look anything like machine guns of the past wars and the magazine is a horizontal brick above the trigger. Chambered in 7.79 HP.",
+      "weight": 36,
+      "stats": {"magazine":16, "range": 6, "damage": 30, "burst": 4, "suppress": 8, "ammoType": 4, "bonus": 0},
+      "flags": ["BURST_LOCK"],
       "slots": ["weapon"]
     },
     "3": {
-      "name": "modern machine gun",
-      "droppable": true,
-      "flavor": "A bullpup NG22 Suppression Weapon, holding an impressive 99 rounds. It is extremely bulky and has awful ergonomics, but more than makes up for it with its rate of fire and sheer power. It doesn’t look anything like machine guns of the past wars and the magazine is a horizontal brick above the trigger. Chambered in 7.79 HP.",
-      "maxStack": 0,
-      "stats": {"range": 4, "damage": 4, "cost": 4, "suppress": 8, "ammo": 4, "bonus": 4},
-      "slots": ["weapon"]
+      "name": "national guard light rifle rounds",
+      "flavor": "A handful of 7.79 High Penetration rounds. Being a caseless round, they are dull green and rectangular and impossible to hand load. They are only 40mm long and are known to make short work of most soft armor.",
+      "weight": 1,
+      "flags": ["AMMMUNITION"],
+      "slots": []
     },
     "4": {
-      "name": "modern military rounds",
-      "droppable": true,
-      "flavor": "A handful of 7.79 High Penetration rounds. Being a caseless round, they are dull green and rectangular. For long-range use, you can flip them around and they remain effective. Impossible to hand-load.",
-      "maxStack": 16,
-      "slots": ["equipment"]
+      "name": "steel helmet",
+      "flavor": "Popularized in the Old War, this steel wide-brimmed cap is quite protective against shrapnel and debris alike. Bullets, however, rarely get stopped by this helmet. It's also referred to as a 'battle bowler', 'tin hat' and 'closed casket insurance'. Still used by a few countries due to the ease and price of construction despite much higher quality helmet designs existing for decades.",
+      "weight": 12,
+      "stats": {"baseline":1,"meleeProtectionBonus":1,"rangedProtectionBonus":0,"explosionProtectionBonus":2,"lethalityReduction":1},
+      "slots": ["headgear"]
     },
     "5": {
       "name": "tactical armor",
-      "droppable": true,
-      "flavor": "placeholder",
-      "maxStack": 1,
-      "stats": {"meleeProtection": 4, "rangedProtection": 2}
+      "flavor": "Relatively light fiberguard armoured suit worn by law enforcement or poorly funded soldiers. Designed only to stop blades and pistol rounds, you wont last long in a firefight if you rely entirely on this suit. Produced locally in Bastille, it is hard to find a militia or deserter squad without at least one of these suits they looted from a police station or stitched together themselves from battlefield scraps. The fabric itself was originally black but has since faded, is incredibly itchy and many seams have come undone in its long service.",
+      "weight": 45,
+      "stats": {"baseline":3,"meleeProtectionBonus":2,"rangedProtectionBonus":1,"explosionProtectionBonus":0,"damageReduction":10},
+      "slots": ["gear"]
     },
     "6": {
       "name": "national guard field uniform",
-      "droppable": true,
       "flavor": "The standard issue field uniform for all National Guard troopers in Bastille. With a brodie helmet, red bandana and camouflauged fatigues, it's vaguely comfortable and fits pretty much no one. At least it's warm.",
-      "maxStack": 5,
+      "weight": 10,
       "slots": ["uniform"]
+    },
+    "7": {
+      "name": "national guard marksman rifle",
+      "flavor": "The NG20 Reconaissance Weapon, A semi-automatic marksman rifle firing from a small side-fed magazine, integrated irons and a 10x scope. Chambered in the massive 12.79 TC, projectiles fired from this rifle smash through lightly armored opponents like nothing, but struggle against heavy armor. The weapon is designed to be used while laying down, but no bipod or attachment point exists.",
+      "weight": 28,
+      "stats": {"magazine":6, "range": 9, "damage": 45, "burst":2, "suppress": 0, "ammoType": 9, "bonus": 5},
+      "flags": ["NO_SUPPRESS"],
+      "slots": ["weapon"]
+    },
+    "8": {
+      "name": "national guard heavy machine gun",
+      "flavor": "The NG25 Vehicle Mounted Rifle, despite the name, is perfectly capable of being used by infantry. If it wasn't the heaviest machine gun of its class, unwieldy as the Two Hells and have as much recoil as a horse's kick, it might even start approaching practical! It has an extremely utilitarian and blocky design, exactly no effort was put into making it look nice. It's belt fed by a very unique chain mechanism that takes advantage of the caseless ammunition.",
+      "weight": 50,
+      "stats": {"magazine":20, "range": 6, "damage": 45, "burst":5, "suppress": 10, "ammoType": 9, "bonus": 0},
+      "flags": ["BURST_LOCK"],
+      "slots": ["weapon"]
+    },
+    "9": {
+      "name": "national guard heavy rifle rounds",
+      "flavor": "placeholder",
+      "weight": 1,
+      "flags": ["AMMMUNITION"],
+      "slots": []
     }
   }
-  

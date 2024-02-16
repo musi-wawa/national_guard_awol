@@ -75,7 +75,7 @@ def hasAmmo(fighter,squad):
     ammoNeeded = fighter.inventory.weapon.ammo
     return True
 
-def viewInventoryCombat(squad): #doing things would cost actions if we were tracking actions per fighter instead of per squad
+def viewInventoryCombat(squad): #doing things would cost actions if we were tracking actions per fighter instead of per squad. for now, moving and viewing items costs nothing
     print()
     print(squad)
         
